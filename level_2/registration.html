@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student registration form</title>
+    <style>
+      td {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><font color="red">Student Registration Form</font></h1>
+    <table border="0px">
+      <form>
+        <tr>
+          <td><label for="reg">Regno :</label></td>
+          <td>
+            <input
+              type="text"
+              placeholder="Enter your Regno"
+              id="reg"
+              required
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td><label for="name">Name :</label></td>
+          <td>
+            <input
+              type="text"
+              placeholder="Enter your Name"
+              id="name"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="fname">Father Nmae :</label></td>
+          <td>
+            <input
+              id="fname"
+              type="text"
+              placeholder="Enter your Father name"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="gender">Gender :</label></td>
+          <td>
+            <input type="radio" id="gender" name="m" value="m" required />
+            Male
+            <input type="radio" id="gender" name="m" value="f" required />
+            Female
+          </td>
+        </tr>
+        <tr>
+          <td><label for="dbirth">Date of Birth :</label></td>
+          <td><input type="date" id="dbirth" required /></td>
+        </tr>
+        <tr>
+          <td><label for="language">Languages Known :</label></td>
+          <td>
+            <input type="checkbox" id="language" value="c" required />
+            C
+            <input type="checkbox" id="language" value="c++" required />
+            c++
+            <input type="checkbox" id="language" value="python" required />
+            Python
+            <br />
+            <input type="checkbox" id="language" value="Java" required />
+            Java
+            <input type="checkbox" id="language" value="r" required />
+            R
+            <input type="checkbox" id="language" value="Julia" required />
+            Julia
+          </td>
+        </tr>
+        <tr>
+          <td><label for="branch">Branch :</label></td>
+          <td>
+            <select required>
+              <option value="-1">Select yor branch</option>
+              <option>CSE</option>
+              <option>IT</option>
+              <option>AI$DS</option>
+              <option>ECE</option>
+              <option>EEE</option>
+              <option>ME</option>
+              <option>CE</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Address :</td>
+          <td><textarea row="5" cols="10"></textarea></td>
+        </tr>
+        <tr>
+          <td><input type="submit" value="submit" /></td>
+          <td><input type="reset" value="reset" /></td>
+        </tr>
+      </form>
+    </table>
+  </body>
+</html>
