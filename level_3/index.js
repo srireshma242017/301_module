@@ -35,6 +35,9 @@ const todoList = () => {
             }
         }
         return dutoday;
+
+
+        
     }
 
     const dueLater = () => {
@@ -43,13 +46,7 @@ const todoList = () => {
         // ..
         // ..
         // ..
-        var dulater = [];
-        for (var i = 0; i < todos.all.length; i++) {
-            if (todos.all[i].dueDate == tomorrow) {
-                dulater.push(all[i]);
-            }
-        }
-        return dulater;
+        
     }
 
     const toDisplayableList = (list) => {
@@ -60,24 +57,7 @@ const todoList = () => {
         // ..
         // return OUTPUT_STRING
 
-        var OUTPUT_STRING = ""
-        for (var i = 0; i < list.length; i++) {
-            if (list[i].dueDate == today) {
-                if (list[i].completed) {
-                    OUTPUT_STRING = OUTPUT_STRING + '[x] ' + list[i].title + "\n";
-                }
-                else {
-                    OUTPUT_STRING = OUTPUT_STRING + '[ ] ' + list[i].title + "\n";
-                }
-            }
-            else if (list[i].dueDate == yesterday) {
-                OUTPUT_STRING = OUTPUT_STRING + '[ ] ' + list[i].title + " " + yesterday + "\n";
-            }
-            else {
-                OUTPUT_STRING = OUTPUT_STRING + '[ ] ' + list[i].title + " " + tomorrow + "\n";
-            }
-        }
-        return OUTPUT_STRING;
+ 
 
     }
 
