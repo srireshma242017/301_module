@@ -46,6 +46,13 @@ const todoList = () => {
         // ..
         // ..
         // ..
+        var dulater = [];
+        for (var i = 0; i < todos.all.length; i++) {
+            if (todos.all[i].dueDate == tomorrow) {
+                dulater.push(all[i]);
+            }
+        }
+        return dulater;
         
     }
 
