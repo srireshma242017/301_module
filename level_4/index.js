@@ -7,11 +7,6 @@ const todoList = () => {
         all[index].completed = true
     }
     const overdue = () => {
-        // Write the date check condition here and return the array of overdue items accordingly.
-        // FILL YOUR CODE HERE
-        // ..
-        // ..
-        // ..
         var ovdue = [];
         for (var i = 0; i < todos.all.length; i++) {
             if (todos.all[i].dueDate == yesterday) {
@@ -21,11 +16,6 @@ const todoList = () => {
         return ovdue;
     }
     const dueToday = () => {
-        // Write the date check condition here and return the array of todo items that are due today accordingly.
-        // FILL YOUR CODE HERE
-        // ..
-        // ..
-        // ..
         var dutoday = [];
         for (var i = 0; i < todos.all.length; i++) {
             if (todos.all[i].dueDate == today) {
@@ -35,11 +25,6 @@ const todoList = () => {
         return dutoday;
     }
     const dueLater = () => {
-        // Write the date check condition here and return the array of todo items that are due later accordingly.
-        // FILL YOUR CODE HERE
-        // ..
-        // ..
-        // ..
         var dulater = [];
         for (var i = 0; i < todos.all.length; i++) {
             if (todos.all[i].dueDate == tomorrow) {
@@ -49,12 +34,6 @@ const todoList = () => {
         return dulater;
     }
     const toDisplayableList = (list) => {
-        // Format the To-Do list here, and return the output string as per the format given above.
-        // FILL YOUR CODE HERE
-        // ..
-        // ..
-        // ..
-        // return OUTPUT_STRING
         var OUTPUT_STRING = ""
         for (var i = 0; i < list.length; i++) {
             if (list[i].dueDate == today) {
@@ -76,9 +55,5 @@ const todoList = () => {
     }
     return { all, add, markAsComplete, overdue, dueToday, dueLater, toDisplayableList };
 }
-
-// ####################################### #
-// DO NOT CHANGE ANYTHING BELOW THIS LINE. #
-// ####################################### #
 
 module.exports = todoList;
