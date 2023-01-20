@@ -1,6 +1,7 @@
-// models/todo.js
 'use strict';
-const {Model} = require('sequelize');
+const {
+  Model
+} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Todo extends Model {
     /**
@@ -11,6 +12,38 @@ module.exports = (sequelize, DataTypes) => {
     static async addTask(params) {
       return await Todo.create(params);
     }
+    static async showList() {
+      console.log("My Todo list \n");
+
+      console.log("Overdue");
+      // FILL IN HERE
+      console.log("\n");
+
+      console.log("Due Today");
+      // FILL IN HERE
+      console.log("\n");
+
+      console.log("Due Later");
+      // FILL IN HERE
+    }
+
+    static async overdue() {
+      // FILL IN HERE TO RETURN OVERDUE ITEMS
+    }
+
+    static async dueToday() {
+      // FILL IN HERE TO RETURN ITEMS DUE tODAY
+    }
+
+    static async dueLater() {
+      // FILL IN HERE TO RETURN ITEMS DUE LATER
+    }
+
+    static async markAsComplete(id) {
+      // FILL IN HERE TO MARK AN ITEM AS COMPLETE
+
+    }
+
     static associate(models) {
       // define association here
     }
