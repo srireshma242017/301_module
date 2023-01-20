@@ -4,8 +4,8 @@ var db = require("../models");
 
 describe("Todolist Test Suite", () => {
   beforeAll(async () => {
-    await db.sequelize.sync({ force: true })
-})
+    await db.sequelize.sync({ force: true });
+  });
 
   test("Should add new todo", async () => {
     const todoItemsCount = await db.Todo.count()
