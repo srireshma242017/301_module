@@ -16,36 +16,84 @@ module.exports = (sequelize, DataTypes) => {
       console.log("My Todo list \n");
 
       console.log("Overdue");
-      // FILL IN HERE
+      await this.overdue();
       console.log("\n");
 
       console.log("Due Today");
-      // FILL IN HERE
+      await this.dueToday();
       console.log("\n");
 
       console.log("Due Later");
-      // FILL IN HERE
+      await this.dueLater();
+    
+      const getAllTodos = async()=>{
+        try{
+            const todos = await Todo.findAll();
+            const todolist = todos.map(todo =>todo.displayableString()).join("\n");
+            console.log(todolist);
+        }
+        catch(error){
+          console.error(error);
+        }
+      }
     }
+    
 
     static async overdue() {
-      // FILL IN HERE TO RETURN OVERDUE ITEMS
+      var formattedDate = (date) => {
+        return date.toISOString().split("T")[0];
+      };
+
+      var Todaysdate = new Date();
+      const yesterday = formattedDate(
+        new Date(new Date().setDate(Todaysdate.getDate() - 1))
+      );
+      const overduelist = await Todo.findAll({
+        where: { dueDate: yesterday },
+      });
+      const overduetodo = overduelist.map((overduelist) => overduelist.displayableString()).join("\n");
+      console.log(overduetodo);
     }
 
     static async dueToday() {
-      // FILL IN HERE TO RETURN ITEMS DUE tODAY
+      var formattedDate = (date) => {
+        return date.toISOString().split("T")[0];
+      };
+      var Todaysdate = new Date();
+      const today = formattedDate(Todaysdate);
+      const duetodaylist = await Todo.findAll({
+        where: { dueDate: today },
+      });
+      const duetodaytodo = duetodaylist.map((duetodaylist) => duetodaylist.displayableString()).join("\n");
+      console.log(duetodaytodo);
     }
 
     static async dueLater() {
-      // FILL IN HERE TO RETURN ITEMS DUE LATER
+      var formattedDate = (date) => {
+        return date.toISOString().split("T")[0];
+      };
+      var Todaysdate = new Date();
+      const tomorrow = formattedDate(
+        new Date(new Date().setDate(Todaysdate.getDate() + 1))
+      );
+      const duelaterlist = await Todo.findAll({
+        where: { dueDate: tomorrow },
+      });
+      const duelatertodo = duelaterlist.map((duelaterlist) => duelaterlist.displayableString()).join("\n");
+      console.log(duelatertodo);
+
     }
 
     static async markAsComplete(id) {
-      // FILL IN HERE TO MARK AN ITEM AS COMPLETE
-
-    }
-
-    static associate(models) {
-      // define association here
+      const todo = await Todo.update(
+        { completed: true },
+        {
+          where: {
+            id: id,
+          },
+        }
+      );
+      console.log(todo.displayableString());
     }
     displayableString() {
       let checkbox = this.completed ? "[x]" : "[ ]";
