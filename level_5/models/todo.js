@@ -25,19 +25,19 @@ module.exports = (sequelize, DataTypes) => {
 
       console.log("Due Later");
       await this.dueLater();
-    
-      const getAllTodos = async()=>{
-        try{
-            const todos = await Todo.findAll();
-            const todolist = todos.map(todo =>todo.displayableString()).join("\n");
-            console.log(todolist);
+
+      const getAllTodos = async () => {
+        try {
+          const todos = await Todo.findAll();
+          const todolist = todos.map(todo => todo.displayableString()).join("\n");
+          console.log(todolist);
         }
-        catch(error){
+        catch (error) {
           console.error(error);
         }
       }
     }
-    
+
 
     static async overdue() {
       var formattedDate = (date) => {

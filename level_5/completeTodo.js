@@ -10,10 +10,10 @@ const markAsComplete = async (id) => {
 
 (async () => {
   const { id } = argv;
-  if(!id) {
+  if (!id) {
     throw new Error("Need to pass an id");
   }
-  if(!Number.isInteger(id)) {
+  if (!Number.isInteger(id)) {
     throw new Error("The id needs to be an integer")
   }
   await markAsComplete(id);

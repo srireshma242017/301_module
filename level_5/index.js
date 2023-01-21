@@ -16,50 +16,50 @@ const createTodo = async () => {
   }
 };
 
-const countItems= async()=>{
-  try{
-    const totalCount= await Todo.count();
+const countItems = async () => {
+  try {
+    const totalCount = await Todo.count();
     console.log(`Found ${totalCount} items in the table`);
   }
-  catch(error){
+  catch (error) {
     console.log(error);
   }
 }
 //TO RETREIVE THE ALL RECORDS
-const getAllTodos = async()=>{
-  try{
-      const todos = await Todo.findAll();
-      const todolist = todos.map(todo =>todo.displayableString()).join("\n");
-      console.log(todolist);
+const getAllTodos = async () => {
+  try {
+    const todos = await Todo.findAll();
+    const todolist = todos.map(todo => todo.displayableString()).join("\n");
+    console.log(todolist);
   }
-  catch(error){
+  catch (error) {
     console.error(error);
   }
 }
 
-const updateItem = async (id)=>{
-  try{
-    await Todo.update({completed:true},{
-      where:{
-        id:id
+const updateItem = async (id) => {
+  try {
+    await Todo.update({ completed: true }, {
+      where: {
+        id: id
       }
     })
   }
-  catch(error){
+  catch (error) {
     console.error(error);
   }
 }
-const deleteOne = async(id)=>{
-  try{
+const deleteOne = async (id) => {
+  try {
     const deleteRowCount = await Todo.destroy({
-      where:{
-        id:id
+      where: {
+        id: id
       }
     })
     console.log(`Deleted ${deleteRowCount} rows!!`)
   }
-  catch(error){
-      console.error(error);
+  catch (error) {
+    console.error(error);
   }
 }
 (async () => {
